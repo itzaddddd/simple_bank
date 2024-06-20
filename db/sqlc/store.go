@@ -114,7 +114,7 @@ func addMoney(
 		return
 	}
 
-	account1, err = q.AddAccountBalance(ctx, AddAccountBalanceParams{
+	account2, err = q.AddAccountBalance(ctx, AddAccountBalanceParams{
 		Amount: amount2,
 		ID:     accountID2,
 	})
