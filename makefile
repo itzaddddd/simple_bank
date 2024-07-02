@@ -15,12 +15,17 @@ migrateup:
 migrateup1:
 	migrate -path db/migration -database "postgresql://root:1234@localhost:5432/simple_bank?sslmode=disable" -verbose up 1
 
+migrateupaws:
+	migrate -path db/migration -database "postgresql://root:VK26NIS1uOyEWWmCHj3c@simple-bank.cn20ua2mcmbe.ap-southeast-1.rds.amazonaws.com:5432/simple_bank" -verbose up
 
 migratedown:
 	migrate -path db/migration -database "postgresql://root:1234@localhost:5432/simple_bank?sslmode=disable" -verbose down
 
 migratedown1:
 	migrate -path db/migration -database "postgresql://root:1234@localhost:5432/simple_bank?sslmode=disable" -verbose down 1
+
+migratedownaws:
+		migrate -path db/migration -database "postgresql://root:VK26NIS1uOyEWWmCHj3c@simple-bank.cn20ua2mcmbe.ap-southeast-1.rds.amazonaws.com/simple_bank" -verbose down
 
 sqlc:
 	sqlc generate
